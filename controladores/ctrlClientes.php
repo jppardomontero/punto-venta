@@ -18,7 +18,7 @@ class controladorClientes{
                           'correo' => $_POST['correo_guardar'],
                           'telefono' =>$_POST['telefono_guardar'],
                           'direccion' =>$_POST['direccion_guardar']);
-            if(modeloClientes::ctrlGuardarClientes($tabla, $data)){
+            if(modeloClientes::mdlGuardarClientes($tabla, $data)){
                 echo "<script>
                 Swal.fire({
                     icon: 'success',
@@ -46,5 +46,12 @@ class controladorClientes{
                 </script>";
             }
         }
+    }
+
+    //función para preparar datos para cargar
+    public static function ctrlCargarClientes(){
+      $tabla = 'clientes';
+      $res = modeloClientes::mdlCargarClientes($tabla);
+      return $res;
     }
 }

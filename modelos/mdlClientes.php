@@ -2,7 +2,7 @@
 require_once("conexion.php");
 class modeloClientes
 {
-    public static function ctrlGuardarClientes($tabla, $data)
+    public static function mdlGuardarClientes($tabla, $data)
     {
 
         $stm = conexion::conectar()->prepare("INSERT INTO $tabla (cedula, nombres, apellidos, direccion, sexo, correo, telefono, f_nacimiento) VALUES (:cedula, :nombres, :apellidos, :direccion, :sexo, :correo, :telefono, :f_nacimiento)");
@@ -20,5 +20,12 @@ class modeloClientes
         } else {
             return "error";
         }
+    }
+
+    //Función para cargar de la base de datos
+    public static function mdlCargarClientes($tabla){
+        $stm = conexion::conectar()->prepare("SELECT * FROM $tabla");
+        $stm->execute();
+        return $stm->fetchAll();
     }
 }
