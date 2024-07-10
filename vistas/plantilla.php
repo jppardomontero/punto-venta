@@ -78,6 +78,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == "activa") {
 
 <script src="vistas/js/persona.js"></script>
 <script src="vistas/js/general.js"></script>
+<script src="vistas/js/clientes.js"></script>
 </body>
 
 </html>

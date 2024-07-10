@@ -23,9 +23,17 @@ class modeloClientes
     }
 
     //Función para cargar de la base de datos
-    public static function mdlCargarClientes($tabla){
-        $stm = conexion::conectar()->prepare("SELECT * FROM $tabla");
-        $stm->execute();
-        return $stm->fetchAll();
+    public static function mdlCargarClientes($tabla, $id_cliente)
+    {
+        if ($id_cliente == 0) {
+            $stm = conexion::conectar()->prepare("SELECT * FROM $tabla");
+            $stm->execute();
+            return $stm->fetchAll();
+        }else{
+            $stm = conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id_clientes=:id_clientes");
+            $stm->bindParam(":id_clientes", $id_cliente, PDO::PARAM_INT);
+            $stm->execute();
+            return $stm->fetch();
+        }
     }
 }

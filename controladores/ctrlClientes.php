@@ -49,9 +49,9 @@ class controladorClientes{
     }
 
     //función para preparar datos para cargar
-    public static function ctrlCargarClientes(){
+    public static function ctrlCargarClientes($id_clientes){
       $tabla = 'clientes';
-      $res = modeloClientes::mdlCargarClientes($tabla);
+      $res = modeloClientes::mdlCargarClientes($tabla, $id_clientes);
       return $res;
     }
 }

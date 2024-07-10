@@ -15,9 +15,3 @@
       "responsive": true,
     });
   });
-
-
-
-  
-
-  
