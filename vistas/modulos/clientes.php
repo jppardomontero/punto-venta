@@ -187,7 +187,8 @@
                                              <div class="input-group-prepend">
                                                  <span class="input-group-text"><i class="fas fa-fingerprint"></i></span>
                                              </div>
-                                             <input type="text" name="cedula_modificar" id="cedula_modificar" maxlength="10" placeholder="Ingrese la cédula de indentidad" required class="form-control">
+                                             <input type="hidden" name="id_clientes" id="id_clientes">
+                                             <input type="text" disabled name="cedula_modificar" id="cedula_modificar" maxlength="10" placeholder="Ingrese la cédula de indentidad" required class="form-control">
                                          </div>
                                          <!-- segunda fila -->
                                          <div class="input-group mb-3">
@@ -240,12 +241,12 @@
 
                                      <!-- Modal footer -->
                                      <div class="modal-footer">
-                                         <button type="submit" class="btn btn-primary">Guardar</button>
+                                         <button type="submit" class="btn btn-primary">Actualizar</button>
                                          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                                      </div>
                                      <?php
-                                        // $objCliente = new controladorClientes;
-                                        // $objCliente->ctrlGuardarClientes();
+                                        $objCliente = new controladorClientes;
+                                        $objCliente->ctrlModificarClientes();
                                         ?>
                              </form>
                          </div>

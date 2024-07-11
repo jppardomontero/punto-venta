@@ -14,7 +14,15 @@ $(".btnClientes").click(function () {
         processData: false,
         dataType: "json",
         success:function(respuesta){
-            console.log("Json", respuesta);
+            $("#id_clientes").val(respuesta["id_clientes"])
+            $("#cedula_modificar").val(respuesta["cedula"])
+            $("#nombre_modificar").val(respuesta["nombres"])
+            $("#apellido_modificar").val(respuesta["apellidos"])
+            $("#sexo_modificar").val(respuesta["sexo"])
+            $("#f_nacimiento_modificar").val(respuesta["f_nacimiento"])
+            $("#correo_modificar").val(respuesta["correo"])
+            $("#telefono_modificar").val(respuesta["telefono"])
+            $("#direccion_modificar").val(respuesta["direccion"])
         }
     });
 });
